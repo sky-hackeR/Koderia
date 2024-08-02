@@ -1,12 +1,21 @@
-// Variable Declaration
+document.addEventListener('DOMContentLoaded', function() {
+    function handleResize() {
+        const col1 = document.querySelector('.col-1');
+        const col2 = document.querySelector('.col-2');
+        const featuredWords = document.querySelector('.featured-words');
+        const submitButton = document.querySelector('.submit');
 
-    const loginBtn = document.querySelector("#login");
-    const registerBtn = document.querySelector("#register");
-    const loginForm = document.querySelector(".login-form");
-    const registerForm = document.querySelector(".register-form");
+        if (window.innerWidth <= 892) {
+            if (!col2.contains(featuredWords)) {
+                col2.appendChild(featuredWords);
+            }
+        } else {
+            if (!col1.contains(featuredWords)) {
+                col1.appendChild(featuredWords);
+            }
+        }
+    }
 
-// Login button function
-
-
-
-// Register button function
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Run on page load
+});
