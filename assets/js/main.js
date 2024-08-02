@@ -19,3 +19,17 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', handleResize);
     handleResize(); // Run on page load
 });
+
+
+$(document).ready(function() {
+    $(".toggle-password").click(function() {
+        let input = $(".password");
+        if (input.attr("type") === "password") {
+            input.attr("type", "text");
+            $(this).removeClass("bx-show").addClass("bx-hide");
+        } else {
+            input.attr("type", "password");
+            $(this).removeClass("bx-hide").addClass("bx-show");
+        }
+    });
+});
